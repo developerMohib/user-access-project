@@ -9,6 +9,7 @@ import ErrorPage from "./ErrorPage.jsx";
 import LogIn from "./Pages/LogIn.jsx";
 import Register from "./Pages/Register.jsx";
 import Provider from "./utilitis/Provider.jsx";
+import Order from "./Pages/Order.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register> </Register>,
+      },
+      {
+        path: "/order",
+        element: <Order> </Order>
       },
     ],
   },
