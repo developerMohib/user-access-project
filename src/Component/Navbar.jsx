@@ -16,8 +16,8 @@ const Navbar = () => {
 
 
   return (
-    <div className="py-3 px-10 bg-gray-400 md:grid grid-cols-2 ">
-      <div className="md:flex justify-between">
+    <div className="py-3 px-10 bg-gray-400 md:grid grid-cols-2 items-center ">
+      <div className="md:flex md:justify-between items-center">
         <div>
             <NavLink
           to="/"
@@ -29,6 +29,28 @@ const Navbar = () => {
           Home{" "}
         </NavLink>
         </div>
+
+        { user && <>
+            <NavLink
+          to="/profile"
+          className={({ isActive }) =>
+            isActive ? "bg-[#23BE0A] text-white" : " "
+          }
+        >
+          {" "}
+          Profile{" "}
+        </NavLink>
+        <NavLink
+          to="/dashboard"
+          className={({ isActive }) =>
+            isActive ? "bg-[#23BE0A] text-white" : " "
+          }
+        >
+          {" "}
+          Dashboard{" "}
+        </NavLink>
+        </>}
+
         <div>
             <NavLink
           to="/order"

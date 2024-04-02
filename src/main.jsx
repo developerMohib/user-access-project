@@ -10,6 +10,9 @@ import LogIn from "./Pages/LogIn.jsx";
 import Register from "./Pages/Register.jsx";
 import Provider from "./utilitis/Provider.jsx";
 import Order from "./Pages/Order.jsx";
+import PrivatePage from "./Pages/PrivatePage.jsx";
+import Profile from "./Pages/Profile.jsx";
+import Dashbord from "./Pages/Dashbord.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,7 +33,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/order",
-        element: <Order> </Order>
+        element: <PrivatePage> <Order> </Order> </PrivatePage> ,
+      },
+      {
+        path: "/profile",
+        element: <PrivatePage> <Profile> </Profile> </PrivatePage> ,
+      },
+      {
+        path: "/dashboard",
+        element: <PrivatePage> <Dashbord></Dashbord> </PrivatePage> ,
       },
     ],
   },

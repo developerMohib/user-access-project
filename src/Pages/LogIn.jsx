@@ -1,15 +1,19 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authCustomContext } from "../utilitis/Provider";
 
 const LogIn = () => {
-    const {logInUser} = useContext(authCustomContext)
+    const {logInUser} = useContext(authCustomContext);
+    const localNavigate = useNavigate()
 
 
     const handleLogIn = (e) => {
+
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
+        e.target.reset()
+        localNavigate('/')
         console.log(email, password)
 
         // send email and password in database

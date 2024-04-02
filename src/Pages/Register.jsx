@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { authCustomContext } from "../utilitis/Provider";
 
 const Register = () => {
     
-    const {createUser} = useContext(authCustomContext)
+    const {createUser} = useContext(authCustomContext);
+    const localNavigate = useNavigate()
     // console.log(createUser, 'register ')
 
     const handleRegister =(e) => {
@@ -12,6 +13,8 @@ const Register = () => {
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
+        e.target.reset()
+        localNavigate('/')
         console.log(name,email,password);
 
         // send email and password 
