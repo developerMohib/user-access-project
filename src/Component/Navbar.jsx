@@ -66,8 +66,11 @@ const Navbar = () => {
       
       <div className="text-right">
         <ul>
-            { user &&
+            { 
               user ? <>
+                {
+                  // {user.email} ? ( <span> {user.email }</span>): (<span> {user.displayName} </span> )
+                }
                 <span> {user.email} </span>
                 <Link to='/' > <button className="btn" onClick={ handleSignOut }> log Out </button> </Link>
               </> 
@@ -93,25 +96,6 @@ const Navbar = () => {
         </NavLink>
               </>
             }
-        {/* <NavLink
-          to="/login"
-          className={({ isActive }) =>
-            isActive ? "bg-[#23BE0A] text-white" : ""
-          }
-        >
-          {" "}
-          Log In{" "}
-        </NavLink>
-
-        <NavLink
-          to="/register"
-          className={({ isActive }) =>
-            isActive ? "bg-[#23BE0A] text-white" : " "
-          }
-        >
-          {" "}
-          Register{" "}
-        </NavLink> */}
       </ul>
         </div>
     </div>

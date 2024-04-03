@@ -3,8 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { authCustomContext } from "../utilitis/Provider";
 
 const LogIn = () => {
-    const {logInUser} = useContext(authCustomContext);
-    const localNavigate = useNavigate()
+    const {logInUser,signInWithGoogle} = useContext(authCustomContext);
+    const localNavigate = useNavigate();
 
 
     const handleLogIn = (e) => {
@@ -26,6 +26,18 @@ const LogIn = () => {
           .catch((error) => {
             console.error(error)
           });
+    }
+    const handleWithGoogle = () => {
+      signInWithGoogle()
+      .then((result) => {
+        console.log(result.user)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+    }
+    const handleWithFacebook = () => {
+      
     }
 
 
@@ -70,6 +82,10 @@ const LogIn = () => {
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
+                <div>
+                <button onClick={handleWithGoogle} className="btn">Google</button>
+                <button onClick={handleWithFacebook} className="btn">Facebook</button>
+                </div>
             </form>
                 <p> New Here? <Link to='/register' > Register </Link></p>
           </div>
